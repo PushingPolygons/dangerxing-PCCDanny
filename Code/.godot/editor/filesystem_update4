@@ -3,3 +3,6 @@ res://Player/Player.tscn
 res://Vehicle/Vehicle.tscn
 res://Roost/Roost.tscn
 res://Player/Player.gd
+res://Terrain/Terrain.tscn
+res://Vehicle/Vehicle.gd
+res://Terrain/Road.tscn
