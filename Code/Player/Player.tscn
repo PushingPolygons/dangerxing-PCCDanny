@@ -17,6 +17,7 @@ albedo_color = Color(0.360784, 0.670588, 0.776471, 0.137255)
 [sub_resource type="BoxMesh" id="BoxMesh_badqx"]
 
 [node name="Player" type="Area3D"]
+transform = Transform3D(-0.999999, 0, 0.00174537, 0, 1, 0, -0.00174537, 0, -0.999999, 0, 0, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.70284, 0, 0, 0, 0.653164, 0, 0, 0, 0.829659, 0, -8.9407e-08, 0.136198)

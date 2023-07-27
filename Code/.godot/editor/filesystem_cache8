@@ -1,7 +1,10 @@
 2a60927148abd1d33b818b535e306557
-::res://::1690424238
-::res://Main/::1690424239
+::res://::1690427031
+::res://Main/::1690426675
 default_env.tres::Environment::-1::1690423154::0::1::::<><>::
 icon.png::CompressedTexture2D::1936513814441667482::1690423154::1690424239::1::::<><>::
-Main.gd::GDScript::-1::1690423154::0::1::::<>Node<>::
-Main.tscn::PackedScene::-1::1690423154::0::1::::<><>::res://Main/Main.gd
+Main.gd::GDScript::-1::1690424567::0::1::::Main<>Node<>::
+Main.tscn::PackedScene::4525746499034965448::1690426675::0::1::::<><>::res://Main/Main.gd<>uid://dph23bwxy023t
+::res://Player/::1690426942
+Player.gd::GDScript::-1::1690426729::0::1::::Player<>Area3D<>::
+Player.tscn::PackedScene::8228234798549387871::1690426942::0::1::::<><>::
