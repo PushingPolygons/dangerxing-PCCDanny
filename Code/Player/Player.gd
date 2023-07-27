@@ -1,8 +1,8 @@
 extends Area3D
 class_name Player
 
-var speed: float = 160.0 # m/s.
-var move_increment: float = 5.0
+var speed: float = 10.0 # m/s.
+var move_increment: float = 1.5
 var current_speed: float = speed
 
 
@@ -16,15 +16,19 @@ func _process(delta):
 	
 	# Get input from W, A, S, D keys (move_up, move_down, move_left, move_right)
 	if Input.is_action_just_pressed("move_up"):
+		TweenPosition(Vector3(0,0, -move_increment))
 		direction.y -= 1
 		update_speed()
 	if Input.is_action_just_pressed("move_down"):
+		TweenPosition(Vector3(0, 0, move_increment))
 		direction.y += 1
 		update_speed()
 	if Input.is_action_just_pressed("move_left"):
+		TweenPosition(Vector3(-move_increment,0, 0))
 		direction.x -= 1
 		update_speed()
 	if Input.is_action_just_pressed("move_right"):
+		TweenPosition(Vector3(move_increment, 0, 0))
 		direction.x += 1
 		update_speed()
 	
@@ -41,6 +45,12 @@ func _process(delta):
 			
 func update_speed():
 	current_speed += move_increment
+
+func TweenPosition(direction: Vector3):
+	var tween = create_tween()
+	tween.set_ease(Tween.EASE_OUT)
+	tween.set_trans(Tween.TRANS_BOUNCE)
+	tween.tween_property(self, "position", position + direction, 0.2)
 
 
 func OnAreaEntered(other_area: Area3D):
