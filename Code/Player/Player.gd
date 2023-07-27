@@ -1,9 +1,11 @@
 extends Area3D
 class_name Player
 
+var main: Main
 var speed: float = 10.0 # m/s.
 var move_increment: float = 1.5
 var current_speed: float = speed
+var player_lives: int = 3
 
 
 
@@ -60,4 +62,5 @@ func OnAreaEntered(other_area: Area3D):
 			print("Roosted")
 
 func kill():
+	player_lives -= 1
 	queue_free()

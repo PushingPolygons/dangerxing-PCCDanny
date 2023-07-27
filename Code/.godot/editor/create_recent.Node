@@ -1,3 +1,7 @@
+VBoxContainer
+Button
+PanelContainer
+Label
 MeshInstance3D
 Node3D
 CollisionShape3D

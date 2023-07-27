@@ -5,3 +5,5 @@ res://Roost/Roost.tscn
 res://Terrain/Road.tscn
 res://Vehicle/Vehicle.gd
 res://Terrain/River.tscn
+res://Main/Main.gd
+res://Player/Player.gd

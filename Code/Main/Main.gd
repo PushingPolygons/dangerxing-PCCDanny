@@ -1,13 +1,9 @@
 extends Node
 class_name Main
 
-# Player (Chicken)
-# Roost (Fill all roosts
-# [W,S,A,D]
-# Vehicles
-# Road
-
-# Vessels
-# River
+const PLAYER = preload("res://Player/Player.tscn")
 
 
+func StartGame():
+	var player = PLAYER.instantiate()
+	player.position.z = -7.7
