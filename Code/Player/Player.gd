@@ -33,6 +33,8 @@ func _process(delta):
 func OnAreaEntered(other_area: Area3D):
 	if other_area is Vehicle:
 		kill()
+	elif other_area is Roost:
+			print("Roosted")
 
 func kill():
 	queue_free()
