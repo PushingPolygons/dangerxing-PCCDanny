@@ -6,6 +6,8 @@ var bounds: float = 20.0
 
 func _process(delta):
 	position.x -= speed * delta
+#	position += transform.basis.z.normalized() * speed * delta
+	
 	if position.x < -bounds:
 		position.x = bounds
 	

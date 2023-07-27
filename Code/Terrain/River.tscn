@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://6e2f0n6njwu5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fh8uh"]
+albedo_color = Color(0.0627451, 0.411765, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_5ig2i"]
+size = Vector3(30, 0.1, 10)
+
+[node name="River" type="MeshInstance3D"]
+material_override = SubResource("StandardMaterial3D_fh8uh")
+mesh = SubResource("BoxMesh_5ig2i")

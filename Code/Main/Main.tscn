@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://cg04rlbhnkept"]
+[gd_scene load_steps=13 format=3 uid="uid://cg04rlbhnkept"]
 
 [ext_resource type="Script" path="res://Main/Main.gd" id="1"]
 [ext_resource type="PackedScene" uid="uid://dph23bwxy023t" path="res://Player/Player.tscn" id="2_v8quc"]
 [ext_resource type="Script" path="res://Player/Player.gd" id="3_l2c8d"]
+[ext_resource type="PackedScene" uid="uid://6e2f0n6njwu5" path="res://Terrain/River.tscn" id="4_3n5fr"]
 [ext_resource type="PackedScene" uid="uid://buwoxjby6e1tt" path="res://Vehicle/Vehicle.tscn" id="4_bruup"]
 [ext_resource type="PackedScene" uid="uid://b3kt5miwigm0h" path="res://Roost/Roost.tscn" id="5_qjt6c"]
 [ext_resource type="PackedScene" uid="uid://dwawwa84tjcb8" path="res://Terrain/Road.tscn" id="6_j2860"]
@@ -43,41 +44,78 @@ shadow_enabled = true
 transform = Transform3D(0.999979, 0, -0.00644022, 0, 1, 0, 0.00644022, 0, 0.999979, 0, 0.219202, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Rig"]
-transform = Transform3D(0.999856, -0.00251907, -0.0168219, 0.0168558, 0.014088, 0.999759, -0.00228147, -0.999898, 0.0141284, -0.0782405, 14.892, 2.72165)
-fov = 78.3712
+transform = Transform3D(0.999771, -0.0131987, -0.016871, 0.0166441, -0.0171165, 0.999715, -0.0134837, -0.999767, -0.0168929, -0.812298, 15.5287, 0.213329)
+fov = 72.5978
 
 [node name="Player" parent="." instance=ExtResource("2_v8quc")]
-transform = Transform3D(0.999979, 0, -0.00644022, 0, 1, 0, 0.00644022, 0, 0.999979, -3.05354, 0.219202, -8.11204)
+transform = Transform3D(0.999979, 0, -0.00644022, 0, 1, 0, 0.00644022, 0, 0.999979, -0.188873, 0.219202, -7.75864)
 script = ExtResource("3_l2c8d")
 
 [node name="Terrain" type="Node3D" parent="."]
+transform = Transform3D(1.4, 0, 0.00244346, 0, 1.4, 0, -0.00244346, 0, 1.4, 0, 0, 0)
 
 [node name="Ground" type="MeshInstance3D" parent="Terrain"]
 material_override = SubResource("StandardMaterial3D_psy32")
 mesh = SubResource("PlaneMesh_lig6h")
 
+[node name="River" parent="Terrain" instance=ExtResource("4_3n5fr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10.3584)
+
+[node name="Terrain2" parent="Terrain" instance=ExtResource("6_j2860")]
+transform = Transform3D(1, 0, 1.74548e-05, 0, 1, 0, -1.74548e-05, 0, 1, 0, -0.0206034, 1.92927)
+skeleton = NodePath("../..")
+
+[node name="Terrain5" parent="Terrain" instance=ExtResource("6_j2860")]
+transform = Transform3D(1, 0, 1.74548e-05, 0, 1, 0, -1.74548e-05, 0, 1, 0, -0.0206034, 4.63861)
+skeleton = NodePath("../..")
+
+[node name="Terrain4" parent="Terrain" instance=ExtResource("6_j2860")]
+transform = Transform3D(1, 0, 1.74548e-05, 0, 1, 0, -1.74548e-05, 0, 1, 0, -0.0206034, -3.24799)
+skeleton = NodePath("../..")
+
+[node name="Terrain3" parent="Terrain" instance=ExtResource("6_j2860")]
+transform = Transform3D(1, 0, 1.74548e-05, 0, 1, 0, -1.74548e-05, 0, 1, 0, -0.0206034, -0.777039)
+skeleton = NodePath("../..")
+
 [node name="Vehicle" parent="." instance=ExtResource("4_bruup")]
-transform = Transform3D(0.0127057, 0, 0.999919, 0, 1, 0, -0.999919, 0, 0.0127057, 7.61419, 0.543458, -3.64092)
+transform = Transform3D(0.0127057, 0, 0.999919, 0, 1, 0, -0.999919, 0, 0.0127057, 7.61419, 0.543458, -5.06648)
+
+[node name="Vehicle8" parent="." instance=ExtResource("4_bruup")]
+transform = Transform3D(0.0127057, 0, 0.999919, 0, 1, 0, -0.999919, 0, 0.0127057, -8.46699, 0.543458, 6.44724)
+speed = 21.0
+
+[node name="Vehicle7" parent="." instance=ExtResource("4_bruup")]
+transform = Transform3D(0.0127057, 0, 0.999919, 0, 1, 0, -0.999919, 0, 0.0127057, 9.71289, 0.543458, 6.50821)
+speed = 21.0
+
+[node name="Vehicle6" parent="." instance=ExtResource("4_bruup")]
+transform = Transform3D(0.0127057, 0, 0.999919, 0, 1, 0, -0.999919, 0, 0.0127057, 13.1578, 0.543458, 2.67134)
+speed = 18.0
+
+[node name="Vehicle5" parent="." instance=ExtResource("4_bruup")]
+transform = Transform3D(0.0127057, 0, 0.999919, 0, 1, 0, -0.999919, 0, 0.0127057, -13.5445, 0.543458, 2.56216)
+speed = 18.0
+
+[node name="Vehicle4" parent="." instance=ExtResource("4_bruup")]
+transform = Transform3D(0.0127057, 0, 0.999919, 0, 1, 0, -0.999919, 0, 0.0127057, 2.95514, 0.543458, 2.59147)
+speed = 18.0
 
 [node name="Vehicle3" parent="." instance=ExtResource("4_bruup")]
-transform = Transform3D(0.0127057, 0, 0.999919, 0, 1, 0, -0.999919, 0, 0.0127057, 12.2632, 0.543458, 0.183884)
+transform = Transform3D(0.0127057, 0, 0.999919, 0, 1, 0, -0.999919, 0, 0.0127057, 12.2632, 0.543458, -1.24168)
 speed = 15.0
 
 [node name="Vehicle2" parent="." instance=ExtResource("4_bruup")]
-transform = Transform3D(0.0127057, 0, 0.999919, 0, 1, 0, -0.999919, 0, 0.0127057, 1.76883, 0.543458, 0.259228)
+transform = Transform3D(0.0127057, 0, 0.999919, 0, 1, 0, -0.999919, 0, 0.0127057, 1.76883, 0.543458, -1.16633)
 speed = 15.0
 
 [node name="Roost" parent="." instance=ExtResource("5_qjt6c")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.97526, -0.0121636, 11.1707)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.97526, -0.0121636, 10.7193)
 
-[node name="Terrain2" parent="." instance=ExtResource("6_j2860")]
-transform = Transform3D(1, 0, 1.74548e-05, 0, 1, 0, -1.74548e-05, 0, 1, 0, -0.0206034, 3.74851)
+[node name="Roost4" parent="." instance=ExtResource("5_qjt6c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.82613, -0.0121636, 10.7193)
 
-[node name="Terrain5" parent="." instance=ExtResource("6_j2860")]
-transform = Transform3D(1, 0, 1.74548e-05, 0, 1, 0, -1.74548e-05, 0, 1, 0, -0.0206034, 7.52557)
+[node name="Roost3" parent="." instance=ExtResource("5_qjt6c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.65449, -0.0121636, 10.7193)
 
-[node name="Terrain4" parent="." instance=ExtResource("6_j2860")]
-transform = Transform3D(1, 0, 1.74548e-05, 0, 1, 0, -1.74548e-05, 0, 1, 0, -0.0206034, -3.77658)
-
-[node name="Terrain3" parent="." instance=ExtResource("6_j2860")]
-transform = Transform3D(1, 0, 1.74548e-05, 0, 1, 0, -1.74548e-05, 0, 1, 0, -0.0206034, 0.192014)
+[node name="Roost2" parent="." instance=ExtResource("5_qjt6c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.98686, -0.0121636, 10.7193)
