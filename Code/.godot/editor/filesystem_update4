@@ -1,3 +1,5 @@
 res://Main/Main.tscn
 res://Player/Player.tscn
 res://Player/Player.gd
+res://Vehicle/Vehicle.tscn
+res://Vehicle/Vehicle.gd

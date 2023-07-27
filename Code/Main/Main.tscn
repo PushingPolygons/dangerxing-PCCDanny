@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://b5qknbp1icbjc"]
+[gd_scene load_steps=10 format=3 uid="uid://b5qknbp1icbjc"]
 
 [ext_resource type="Script" path="res://Main/Main.gd" id="1"]
 [ext_resource type="PackedScene" uid="uid://dph23bwxy023t" path="res://Player/Player.tscn" id="2_v8quc"]
 [ext_resource type="Script" path="res://Player/Player.gd" id="3_l2c8d"]
+[ext_resource type="PackedScene" uid="uid://buwoxjby6e1tt" path="res://Vehicle/Vehicle.tscn" id="4_bruup"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vr4y7"]
 sky_top_color = Color(0.74902, 0.639216, 0.145098, 1)
@@ -36,18 +37,22 @@ transform = Transform3D(0.866025, -0.346072, 0.36088, 0, 0.72176, 0.692143, -0.5
 light_color = Color(0.576471, 0.796078, 0.368627, 1)
 shadow_enabled = true
 
+[node name="Rig" type="Node3D" parent="."]
+transform = Transform3D(0.999979, 0, -0.00644022, 0, 1, 0, 0.00644022, 0, 0.999979, 0, 0.219202, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Rig"]
+transform = Transform3D(0.999485, -0.0153832, -0.028177, 0.0287694, 0.0397578, 0.998795, -0.0142444, -0.999091, 0.0401798, -0.0937147, 10.6992, 0.319042)
+fov = 70.6483
+
 [node name="Player" parent="." instance=ExtResource("2_v8quc")]
 transform = Transform3D(0.999979, 0, -0.00644022, 0, 1, 0, 0.00644022, 0, 0.999979, 0, 0.219202, 0)
 script = ExtResource("3_l2c8d")
-
-[node name="Rig" type="Node3D" parent="Player"]
-
-[node name="Camera3D" type="Camera3D" parent="Player/Rig"]
-transform = Transform3D(0.999485, -0.0153832, -0.028177, 0.0287694, 0.0397578, 0.998795, -0.0142444, -0.999091, 0.0401798, -0.0937147, 10.6992, 0.319042)
-fov = 70.6483
 
 [node name="Terrain" type="Node3D" parent="."]
 
 [node name="Ground" type="MeshInstance3D" parent="Terrain"]
 material_override = SubResource("StandardMaterial3D_psy32")
 mesh = SubResource("PlaneMesh_lig6h")
+
+[node name="Vehicle" parent="." instance=ExtResource("4_bruup")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.87588, 0, 0.101281)
