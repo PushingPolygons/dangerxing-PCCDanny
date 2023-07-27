@@ -3,3 +3,5 @@ res://Player/Player.tscn
 res://Player/Player.gd
 res://Vehicle/Vehicle.tscn
 res://Vehicle/Vehicle.gd
+res://Roost/Roost.tscn
+res://Roost/Roost.gd
