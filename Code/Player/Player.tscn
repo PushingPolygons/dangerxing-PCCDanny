@@ -21,14 +21,6 @@ albedo_color = Color(0.360784, 0.670588, 0.776471, 0.137255)
 [node name="Player" type="Area3D"]
 transform = Transform3D(-0.999999, 0, 0.00174537, 0, 1, 0, -0.00174537, 0, -0.999999, 0, 0, 0)
 
-[node name="Body" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.70284, 0, 0, 0, 0.653164, 0, 0, 0, 0.829659, 0, -8.9407e-08, 0.136198)
-mesh = SubResource("BoxMesh_13evj")
-
-[node name="Tail" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.431943, 0.00128856, -0.00041871, -0.000737636, -0.155915, -0.194525, -0.000909684, 0.73827, -0.0410808, -0.000698711, -8.9407e-08, -0.264123)
-mesh = SubResource("PrismMesh_x5e15")
-
 [node name="Wing1" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.2678, -0.0874087, 7.79831e-05, 0.165577, 0.141373, -0.000274419, 8.21262e-05, 0.000152561, 0.298973, -0.386557, 0.138151, 0.136872)
 mesh = SubResource("BoxMesh_13evj")
@@ -36,6 +28,14 @@ mesh = SubResource("BoxMesh_13evj")
 [node name="Wing2" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.296451, -0.0559884, 0.00101314, 0.106058, -0.156499, -0.000175775, 0.00106696, 9.77208e-05, 0.298971, 0.393634, 0.151968, 0.135511)
 mesh = SubResource("BoxMesh_13evj")
+
+[node name="Body" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.70284, 0, 0, 0, 0.653164, 0, 0, 0, 0.829659, 0, -8.9407e-08, 0.136198)
+mesh = SubResource("BoxMesh_13evj")
+
+[node name="Tail" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.409544, 0.000999804, -0.000444284, -0.000699384, -0.120976, -0.206406, -0.000862511, 0.57283, -0.0435899, -0.000698712, -8.9407e-08, -0.264123)
+mesh = SubResource("PrismMesh_x5e15")
 
 [node name="Head" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.373809, 0, 0, 0, 0.432577, 0, 0, 0, 0.445192, 0, 0.527787, 0.545997)
