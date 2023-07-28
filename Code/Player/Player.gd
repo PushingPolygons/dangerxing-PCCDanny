@@ -65,7 +65,8 @@ func OnAreaEntered(other_area: Area3D):
 	if other_area is Vehicle:
 		kill()
 	elif other_area is Roost:
-		position = spawning_location
+		position = spawning_location # Jump back to spawn.
+		other_area.dummy.show()
 
 func kill():
 	player_lives -= 1

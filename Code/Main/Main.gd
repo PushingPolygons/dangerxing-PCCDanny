@@ -8,6 +8,9 @@ const PLAYER = preload("res://Player/Player.tscn")
 @onready var quit_button = $Menu/VBoxContainer/QuitButton
 
 
+var roosts: Array[Roost] = [$Roosts/Roost1, $Roosts/Roost2, $Roosts/Roost3, $Roosts/Roost4]
+
+
 
 func _ready():
 	play_button.pressed.connect(OnPlayPressed)
@@ -15,7 +18,8 @@ func _ready():
 
 
 
-
+func IsGameOver():
+	return false
 
 
 func SpawnPlayer():
