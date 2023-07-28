@@ -42,6 +42,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.672503, 0)
 shape = SubResource("CylinderShape3D_jmg6y")
 
 [node name="Dummy" type="Node3D" parent="."]
+transform = Transform3D(-1, 0, -0.00052348, 0, 1, 0, 0.00052348, 0, -1, 0, 0, 0)
 
 [node name="Wing1" type="MeshInstance3D" parent="Dummy"]
 transform = Transform3D(0.2678, -0.0874087, 7.79831e-05, 0.165577, 0.141373, -0.000274419, 8.21262e-05, 0.000152561, 0.298973, -0.386557, 1.18176, -0.110485)
