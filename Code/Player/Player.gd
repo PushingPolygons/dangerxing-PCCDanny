@@ -66,12 +66,18 @@ func OnAreaEntered(other_area: Area3D):
 		kill()
 	elif other_area is Roost:
 		position = spawning_location # Jump back to spawn.
-		other_area.dummy.show()
+		other_area.Occupy()
+		if main.IsGameOver():
+			main.menu.show()
+
+
+
 
 func kill():
 	player_lives -= 1
-	lives_ui.text = str(player_lives)
+	lives_ui.text = "Lives: " + str(player_lives)
 	position = spawning_location
 	if player_lives <= 0:
 		main.menu.show()
 		queue_free()
+

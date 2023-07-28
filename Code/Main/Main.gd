@@ -8,7 +8,7 @@ const PLAYER = preload("res://Player/Player.tscn")
 @onready var quit_button = $Menu/VBoxContainer/QuitButton
 
 
-var roosts: Array[Roost] = [$Roosts/Roost1, $Roosts/Roost2, $Roosts/Roost3, $Roosts/Roost4]
+@onready var roosts: Array[Roost] = [$Roosts/Roost1, $Roosts/Roost2, $Roosts/Roost3, $Roosts/Roost4]
 
 
 
@@ -17,9 +17,12 @@ func _ready():
 	quit_button.pressed.connect(OnQuitPressed)
 
 
-
+# Are all the Roosts occupied?
 func IsGameOver():
-	return false
+	for roost in roosts:
+		if not roost.is_occupied:
+			return false
+	return true
 
 
 func SpawnPlayer():

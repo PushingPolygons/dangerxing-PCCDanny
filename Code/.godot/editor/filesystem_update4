@@ -1,9 +1,9 @@
 res://Main/Main.tscn
+res://Roost/Roost.gd
+res://Player/Player.gd
+res://Main/Main.gd
 res://Player/Player.tscn
 res://Vehicle/Vehicle.tscn
 res://Roost/Roost.tscn
 res://Terrain/Road.tscn
 res://Terrain/River.tscn
-res://Player/Player.gd
-res://Roost/Roost.gd
-res://Main/Main.gd
