@@ -1,4 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://dph23bwxy023t"]
+[gd_scene load_steps=11 format=3 uid="uid://dph23bwxy023t"]
+
+[ext_resource type="Script" path="res://Player/Player.gd" id="1_73smy"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_13evj"]
 
@@ -18,8 +20,34 @@ albedo_color = Color(0.360784, 0.670588, 0.776471, 0.137255)
 
 [sub_resource type="BoxMesh" id="BoxMesh_badqx"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nkdkr"]
+content_margin_left = 12.0
+content_margin_top = 12.0
+content_margin_right = 12.0
+content_margin_bottom = 12.0
+bg_color = Color(0.623529, 0.87451, 0.964706, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_size = 1
+
+[sub_resource type="LabelSettings" id="LabelSettings_7y6mq"]
+font_size = 33
+font_color = Color(0, 0.392157, 0, 0.788235)
+outline_size = 2
+outline_color = Color(0, 0, 0, 0.976471)
+shadow_size = 2
+
 [node name="Player" type="Area3D"]
 transform = Transform3D(-0.999999, 0, 0.00174537, 0, 1, 0, -0.00174537, 0, -0.999999, 0, 0, 0)
+script = ExtResource("1_73smy")
 
 [node name="Wing1" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.2678, -0.0874087, 7.79831e-05, 0.165577, 0.141373, -0.000274419, 8.21262e-05, 0.000152561, 0.298973, -0.386557, 0.138151, 0.136872)
@@ -68,3 +96,14 @@ mesh = SubResource("BoxMesh_badqx")
 [node name="Decal" type="Decal" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.222087, 0.146748)
 size = Vector3(0.807267, 0.252074, 0.930535)
+
+[node name="UI" type="PanelContainer" parent="."]
+offset_right = 173.0
+offset_bottom = 58.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_nkdkr")
+
+[node name="LivesUI" type="Label" parent="UI"]
+layout_mode = 2
+text = "Lives: 3"
+label_settings = SubResource("LabelSettings_7y6mq")
+horizontal_alignment = 1

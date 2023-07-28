@@ -3,7 +3,33 @@ class_name Main
 
 const PLAYER = preload("res://Player/Player.tscn")
 
+@onready var menu = $Menu
+@onready var play_button = $Menu/VBoxContainer/PlayButton
+@onready var quit_button = $Menu/VBoxContainer/QuitButton
 
-func StartGame():
-	var player = PLAYER.instantiate()
+
+
+func _ready():
+	play_button.pressed.connect(OnPlayPressed)
+	quit_button.pressed.connect(OnQuitPressed)
+
+
+
+
+
+
+func SpawnPlayer():
+	var player = PLAYER.new()
 	player.position.z = -7.7
+	player.main = self
+	add_child(player)
+
+
+func OnPlayPressed():
+	menu.hide()
+	SpawnPlayer()
+
+
+func OnQuitPressed():
+	get_tree().quit()
+	

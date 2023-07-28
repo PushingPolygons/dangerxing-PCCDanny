@@ -1,16 +1,22 @@
 extends Area3D
 class_name Player
 
+
+@onready var lives_ui = $UI/LivesUI
+
+
 var main: Main
 var speed: float = 10.0 # m/s.
 var move_increment: float = 1.5
 var current_speed: float = speed
 var player_lives: int = 3
-
+var spawning_location: Vector3 = Vector3(0.0, 0.0, -7.7)
 
 
 func _ready():
+	position = spawning_location
 	area_entered.connect(OnAreaEntered)
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -59,8 +65,12 @@ func OnAreaEntered(other_area: Area3D):
 	if other_area is Vehicle:
 		kill()
 	elif other_area is Roost:
-			print("Roosted")
+		position = spawning_location
 
 func kill():
 	player_lives -= 1
-	queue_free()
+	lives_ui.text = str(player_lives)
+	position = spawning_location
+	if player_lives <= 0:
+		main.menu.show()
+		queue_free()
