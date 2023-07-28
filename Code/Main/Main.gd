@@ -19,10 +19,10 @@ func _ready():
 
 
 func SpawnPlayer():
-	var player = PLAYER.new()
-	player.position.z = -7.7
+	var player = PLAYER.instantiate()
 	player.main = self
 	add_child(player)
+	player.position.z = -7.7
 
 
 func OnPlayPressed():
