@@ -52,7 +52,6 @@ fov = 72.5978
 transform = Transform3D(1.4, 0, 0.00244346, 0, 1.4, 0, -0.00244346, 0, 1.4, 0, 0, 0)
 
 [node name="Ground" type="MeshInstance3D" parent="Terrain"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_psy32")
 mesh = SubResource("PlaneMesh_lig6h")
 
