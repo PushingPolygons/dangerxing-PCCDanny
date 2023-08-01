@@ -1,7 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://cg04rlbhnkept"]
+[gd_scene load_steps=12 format=3 uid="uid://cg04rlbhnkept"]
 
 [ext_resource type="Script" path="res://Main/Main.gd" id="1"]
-[ext_resource type="PackedScene" uid="uid://dph23bwxy023t" path="res://Player/Player.tscn" id="2_v8quc"]
 [ext_resource type="PackedScene" uid="uid://6e2f0n6njwu5" path="res://Terrain/River.tscn" id="4_3n5fr"]
 [ext_resource type="PackedScene" uid="uid://buwoxjby6e1tt" path="res://Vehicle/Vehicle.tscn" id="4_bruup"]
 [ext_resource type="PackedScene" uid="uid://b3kt5miwigm0h" path="res://Roost/Roost.tscn" id="5_qjt6c"]
@@ -34,9 +33,6 @@ bg_color = Color(0.623529, 0.87451, 0.964706, 1)
 [node name="Main" type="Node"]
 script = ExtResource("1")
 
-[node name="Player" parent="." instance=ExtResource("2_v8quc")]
-transform = Transform3D(0.999979, 0, -0.00644022, 0, 1, 0, 0.00644022, 0, 0.999979, 0, 0, -7.759)
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_4ewo3")
 
@@ -56,6 +52,7 @@ fov = 72.5978
 transform = Transform3D(1.4, 0, 0.00244346, 0, 1.4, 0, -0.00244346, 0, 1.4, 0, 0, 0)
 
 [node name="Ground" type="MeshInstance3D" parent="Terrain"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_psy32")
 mesh = SubResource("PlaneMesh_lig6h")
 
