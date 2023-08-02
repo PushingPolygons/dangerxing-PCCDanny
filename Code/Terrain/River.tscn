@@ -1,11 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://6e2f0n6njwu5"]
+[gd_scene load_steps=5 format=3 uid="uid://6e2f0n6njwu5"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fh8uh"]
-albedo_color = Color(0.0627451, 0.411765, 1, 1)
+[ext_resource type="Script" path="res://Terrain/River.gd" id="1_n6fye"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_5ig2i"]
-size = Vector3(30, 0.1, 10)
+[sub_resource type="BoxShape3D" id="BoxShape3D_le31i"]
+size = Vector3(30, 0.5, 4)
 
-[node name="River" type="MeshInstance3D"]
-material_override = SubResource("StandardMaterial3D_fh8uh")
-mesh = SubResource("BoxMesh_5ig2i")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gpgwh"]
+albedo_color = Color(0.282353, 0.490196, 1, 1)
+roughness = 0.71
+
+[sub_resource type="BoxMesh" id="BoxMesh_ejo1e"]
+size = Vector3(30, 0.5, 4)
+
+[node name="River" type="Area3D"]
+script = ExtResource("1_n6fye")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.159933, 0)
+shape = SubResource("BoxShape3D_le31i")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.16914, 0)
+material_override = SubResource("StandardMaterial3D_gpgwh")
+mesh = SubResource("BoxMesh_ejo1e")

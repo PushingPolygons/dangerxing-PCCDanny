@@ -1,10 +1,10 @@
+MeshInstance3D
 Node3D
+CollisionShape3D
+Area3D
 VBoxContainer
 Button
 PanelContainer
 Label
-MeshInstance3D
-CollisionShape3D
-Area3D
 Camera3D
 Decal

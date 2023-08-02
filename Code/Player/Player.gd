@@ -12,6 +12,7 @@ var current_speed: float = speed
 var player_lives: int = 3
 var spawning_location: Vector3 = Vector3(0.0, 0.0, -7.7)
 
+var ride_along: Vehicle = null
 
 func _ready():
 	position = spawning_location
@@ -20,6 +21,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if ride_along:
+		position = ride_along.position
 	var direction = Vector2()
 	
 	# Get input from W, A, S, D keys (move_up, move_down, move_left, move_right)
@@ -63,13 +66,18 @@ func update_speed():
 
 func OnAreaEntered(other_area: Area3D):
 	if other_area is Vehicle:
-		kill()
+		if other_area.is_safe:
+			# Ride Along.
+#			reparent(other_area)
+			ride_along = other_area
+		else:
+			ride_along = null
+			kill()
 	elif other_area is Roost:
 		position = spawning_location # Jump back to spawn.
 		other_area.Occupy()
 		if main.IsGameOver():
 			main.menu.show()
-
 
 
 
@@ -80,4 +88,3 @@ func kill():
 	if player_lives <= 0:
 		main.menu.show()
 		queue_free()
-
