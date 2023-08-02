@@ -18,7 +18,6 @@ func _ready():
 	position = spawning_location
 	area_entered.connect(OnAreaEntered)
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if ride_along:
