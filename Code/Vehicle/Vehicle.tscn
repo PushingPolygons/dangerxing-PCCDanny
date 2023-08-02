@@ -48,7 +48,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.308248, 0)
 shape = SubResource("BoxShape3D_4yijx")
 
 [node name="Road" type="Node3D" parent="."]
-visible = false
 
 [node name="TruckBody" type="MeshInstance3D" parent="Road"]
 material_override = SubResource("StandardMaterial3D_bgcgv")
