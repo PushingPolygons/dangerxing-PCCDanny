@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cg04rlbhnkept"]
+[gd_scene load_steps=13 format=3 uid="uid://cg04rlbhnkept"]
 
 [ext_resource type="Script" path="res://Main/Main.gd" id="1"]
 [ext_resource type="PackedScene" uid="uid://6e2f0n6njwu5" path="res://Terrain/River.tscn" id="4_3n5fr"]
@@ -29,6 +29,16 @@ size = Vector2(30, 30)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fvg0j"]
 bg_color = Color(0.623529, 0.87451, 0.964706, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gjyey"]
+bg_color = Color(0.623529, 0.87451, 0.964706, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_bottom_right = 11
+corner_radius_bottom_left = 11
 
 [node name="Main" type="Node"]
 script = ExtResource("1")
@@ -170,3 +180,17 @@ speed = 18.0
 [node name="Vehicle12" parent="boats" instance=ExtResource("4_bruup")]
 transform = Transform3D(-0.0037524, 0, 0.999993, 0, 1, 0, -0.999993, 0, -0.0037524, -12.0888, 0.521932, -9.43928)
 speed = 18.0
+
+[node name="HiScore" type="PanelContainer" parent="."]
+anchors_preset = -1
+anchor_left = 0.825
+anchor_right = 1.0
+anchor_bottom = 0.062
+offset_left = -0.400024
+offset_right = -1.0
+offset_bottom = -0.176003
+theme_override_styles/panel = SubResource("StyleBoxFlat_gjyey")
+
+[node name="HiScoreUI" type="Label" parent="HiScore"]
+layout_mode = 2
+text = "Player score: 1234567890"

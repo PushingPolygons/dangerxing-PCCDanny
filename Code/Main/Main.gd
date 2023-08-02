@@ -6,10 +6,10 @@ const PLAYER = preload("res://Player/Player.tscn")
 @onready var menu = $Menu
 @onready var play_button = $Menu/VBoxContainer/PlayButton
 @onready var quit_button = $Menu/VBoxContainer/QuitButton
-
-
 @onready var roosts: Array[Roost] = [$Roosts/Roost1, $Roosts/Roost2, $Roosts/Roost3, $Roosts/Roost4]
 
+
+var hi_score: int = 12
 
 
 func _ready():

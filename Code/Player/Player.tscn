@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dph23bwxy023t"]
+[gd_scene load_steps=12 format=3 uid="uid://dph23bwxy023t"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_73smy"]
 
@@ -37,6 +37,13 @@ corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 shadow_size = 1
+
+[sub_resource type="LabelSettings" id="LabelSettings_g1168"]
+font_size = 19
+font_color = Color(0, 0.392157, 0, 0.788235)
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 5
 
 [sub_resource type="LabelSettings" id="LabelSettings_7y6mq"]
 font_size = 33
@@ -98,11 +105,24 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.222087, 0.146748)
 size = Vector3(0.807267, 0.252074, 0.930535)
 
 [node name="UI" type="PanelContainer" parent="."]
-offset_right = 173.0
-offset_bottom = 58.0
+anchors_preset = -1
+anchor_right = 0.15
+anchor_bottom = 0.113
+offset_right = 0.199997
+offset_bottom = -0.224007
 theme_override_styles/panel = SubResource("StyleBoxFlat_nkdkr")
 
-[node name="LivesUI" type="Label" parent="UI"]
+[node name="VBoxContainer" type="VBoxContainer" parent="UI"]
+layout_mode = 2
+
+[node name="ScoreUI" type="Label" parent="UI/VBoxContainer"]
+layout_mode = 2
+text = "Player score: 1234567890"
+label_settings = SubResource("LabelSettings_g1168")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LivesUI" type="Label" parent="UI/VBoxContainer"]
 layout_mode = 2
 text = "Lives: 3"
 label_settings = SubResource("LabelSettings_7y6mq")

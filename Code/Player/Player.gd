@@ -3,6 +3,7 @@ class_name Player
 
 
 @onready var lives_ui = $UI/LivesUI
+@onready var score_ui = $UI/VBoxContainer/ScoreUI
 
 
 var main: Main
@@ -11,12 +12,13 @@ var move_increment: float = 1.5
 var current_speed: float = speed
 var player_lives: int = 3
 var spawning_location: Vector3 = Vector3(0.0, 0.0, -7.7)
-
+var score: int = 0
 var ride_along: Vehicle = null
 
 func _ready():
 	position = spawning_location
 	area_entered.connect(OnAreaEntered)
+	area_exited.connect(OnAreaExited)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -62,6 +64,10 @@ func update_speed():
 #	tween.set_trans(Tween.TRANS_BOUNCE)
 #	tween.tween_property(self, "position", position + direction, 0.2)
 
+func UpdateScore(delta_score: int):
+	score += delta_score
+	score_ui.text = "Score: " + str(score)
+	
 
 func OnAreaEntered(other_area: Area3D):
 	if other_area is Vehicle:
@@ -78,6 +84,8 @@ func OnAreaEntered(other_area: Area3D):
 		if main.IsGameOver():
 			main.menu.show()
 
+func OnAreaExited(other_area: Area3D):
+	ride_along = null
 
 
 func kill():
