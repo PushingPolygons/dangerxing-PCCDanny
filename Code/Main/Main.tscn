@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://cg04rlbhnkept"]
+[gd_scene load_steps=15 format=3 uid="uid://cg04rlbhnkept"]
 
 [ext_resource type="Script" path="res://Main/Main.gd" id="1"]
 [ext_resource type="PackedScene" uid="uid://6e2f0n6njwu5" path="res://Terrain/River.tscn" id="4_3n5fr"]
 [ext_resource type="PackedScene" uid="uid://buwoxjby6e1tt" path="res://Vehicle/Vehicle.tscn" id="4_bruup"]
 [ext_resource type="PackedScene" uid="uid://b3kt5miwigm0h" path="res://Roost/Roost.tscn" id="5_qjt6c"]
+[ext_resource type="PackedScene" uid="uid://q5q6s1n7m6lc" path="res://Terrain/Roadblock.tscn" id="6_ec7g1"]
 [ext_resource type="PackedScene" uid="uid://dwawwa84tjcb8" path="res://Terrain/Road.tscn" id="6_j2860"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vr4y7"]
@@ -40,6 +41,8 @@ border_color = Color(0, 0, 0, 1)
 corner_radius_bottom_right = 11
 corner_radius_bottom_left = 11
 
+[sub_resource type="LabelSettings" id="LabelSettings_dq0i0"]
+
 [node name="Main" type="Node"]
 script = ExtResource("1")
 
@@ -55,7 +58,7 @@ shadow_enabled = true
 transform = Transform3D(0.999979, 0, -0.00644022, 0, 1, 0, 0.00644022, 0, 0.999979, 0, 0.219202, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Rig"]
-transform = Transform3D(0.999861, -0.00101846, -0.016664, 0.0166441, -0.0171165, 0.999715, -0.0013034, -0.999853, -0.0170972, -0.812923, 15.5287, 0.116323)
+transform = Transform3D(0.999861, -0.00101846, -0.016664, 0.0166441, -0.0171165, 0.999715, -0.0013034, -0.999853, -0.0170972, -0.814708, 15.3832, -0.160816)
 fov = 72.5978
 
 [node name="Terrain" type="Node3D" parent="."]
@@ -170,7 +173,7 @@ is_safe = false
 [node name="boats" type="Node3D" parent="."]
 
 [node name="Vehicle10" parent="boats" instance=ExtResource("4_bruup")]
-transform = Transform3D(-0.0155851, 0, 0.999878, 0, 1, 0, -0.999878, 0, -0.0155851, 19.226, 0.445101, -9.4329)
+transform = Transform3D(-0.0155851, 0, 0.999878, 0, 1, 0, -0.999878, 0, -0.0155851, 19.226, 0.445101, -9.74774)
 speed = 18.0
 
 [node name="Vehicle11" parent="boats" instance=ExtResource("4_bruup")]
@@ -193,4 +196,32 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_gjyey")
 
 [node name="HiScoreUI" type="Label" parent="HiScore"]
 layout_mode = 2
-text = "Player score: 1234567890"
+text = "PlayerScore:"
+label_settings = SubResource("LabelSettings_dq0i0")
+
+[node name="Roadblock" parent="." instance=ExtResource("6_ec7g1")]
+transform = Transform3D(0.00136133, 0, -0.999999, 0, 1, 0, 0.999999, 0, 0.00136133, 8.39179, 0.664939, -8.61227)
+
+[node name="Roadblock5" parent="." instance=ExtResource("6_ec7g1")]
+transform = Transform3D(0.00136133, 0, -0.999999, 0, 1, 0, 0.999999, 0, 0.00136133, 4.38347, 0.664939, -8.65199)
+
+[node name="Roadblock4" parent="." instance=ExtResource("6_ec7g1")]
+transform = Transform3D(0.00136133, 0, -0.999999, 0, 1, 0, 0.999999, 0, 0.00136133, -5.64273, 0.664939, -8.72989)
+
+[node name="Roadblock8" parent="." instance=ExtResource("6_ec7g1")]
+transform = Transform3D(0.00136133, 0, -0.999999, 0, 1, 0, 0.999999, 0, 0.00136133, -9.64106, 0.664939, -8.74717)
+
+[node name="Roadblock9" parent="." instance=ExtResource("6_ec7g1")]
+transform = Transform3D(0.00136133, 0, -0.999999, 0, 1, 0, 0.999999, 0, 0.00136133, -13.6443, 0.664939, -8.78783)
+
+[node name="Roadblock10" parent="." instance=ExtResource("6_ec7g1")]
+transform = Transform3D(0.00136133, 0, -0.999999, 0, 1, 0, 0.999999, 0, 0.00136133, -19.3043, 0.664939, -8.82205)
+
+[node name="Roadblock3" parent="." instance=ExtResource("6_ec7g1")]
+transform = Transform3D(0.00136133, 0, -0.999999, 0, 1, 0, 0.999999, 0, 0.00136133, 12.3905, 0.664939, -8.57365)
+
+[node name="Roadblock7" parent="." instance=ExtResource("6_ec7g1")]
+transform = Transform3D(0.00136133, 0, -0.999999, 0, 1, 0, 0.999999, 0, 0.00136133, 19.3013, 0.664939, -8.53814)
+
+[node name="Roadblock2" parent="." instance=ExtResource("6_ec7g1")]
+transform = Transform3D(0.00136133, 0, -0.999999, 0, 1, 0, 0.999999, 0, 0.00136133, 0.379435, 0.664939, -8.68864)

@@ -2,12 +2,13 @@ extends Area3D
 class_name Player
 
 
-@onready var lives_ui = $UI/LivesUI
+@onready var lives_ui = $UI/VBoxContainer/LivesUI
 @onready var score_ui = $UI/VBoxContainer/ScoreUI
 
 
+
 var main: Main
-var speed: float = 160.0 # m/s.
+var speed: float = 180.0 # m/s.
 var move_increment: float = 1.5
 var current_speed: float = speed
 var player_lives: int = 3
@@ -31,18 +32,22 @@ func _process(delta):
 #		TweenPosition(Vector3(0,0, -move_increment))
 		direction.y -= 1
 		update_speed()
+		UpdateScore(1)
 	if Input.is_action_just_pressed("move_down"):
 #		TweenPosition(Vector3(0, 0, move_increment))
 		direction.y += 1
 		update_speed()
+		UpdateScore(1)
 	if Input.is_action_just_pressed("move_left"):
 #		TweenPosition(Vector3(-move_increment,0, 0))
 		direction.x -= 1
 		update_speed()
+		UpdateScore(1)
 	if Input.is_action_just_pressed("move_right"):
 #		TweenPosition(Vector3(move_increment, 0, 0))
 		direction.x += 1
 		update_speed()
+		UpdateScore(1)
 	
 	direction = direction.normalized() # Normalize the vector to get consistent speed in all directions
 	
@@ -67,6 +72,9 @@ func update_speed():
 func UpdateScore(delta_score: int):
 	score += delta_score
 	score_ui.text = "Score: " + str(score)
+	
+	if score > main.hi_score:
+		main.UpdateHiScore(score)
 	
 
 func OnAreaEntered(other_area: Area3D):

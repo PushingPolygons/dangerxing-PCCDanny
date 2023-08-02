@@ -6,3 +6,4 @@ res://Terrain/River.tscn
 res://Player/Player.gd
 res://Main/Main.gd
 res://Player/Player.tscn
+res://Terrain/Roadblock.tscn
