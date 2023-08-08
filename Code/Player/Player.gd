@@ -93,9 +93,12 @@ func OnAreaEntered(other_area: Area3D):
 		other_area.Occupy()
 		if main.IsGameOver():
 			main.menu.show()
+		elif other_area is River:
+			kill()
 
 func OnAreaExited(other_area: Area3D):
-	ride_along = null
+	pass
+#	ride_along = null
 
 
 func kill():
