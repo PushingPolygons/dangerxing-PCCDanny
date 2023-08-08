@@ -1,10 +1,10 @@
+Node3D
 MeshInstance3D
 Area3D
 CollisionShape3D
 VBoxContainer
 Label
 PanelContainer
-Node3D
 Button
 Camera3D
 Decal

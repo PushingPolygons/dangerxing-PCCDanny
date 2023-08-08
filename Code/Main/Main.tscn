@@ -69,7 +69,7 @@ material_override = SubResource("StandardMaterial3D_psy32")
 mesh = SubResource("PlaneMesh_lig6h")
 
 [node name="River" parent="Terrain" instance=ExtResource("4_3n5fr")]
-transform = Transform3D(1, 0, -2.32831e-10, 0, 1, 0, 2.32831e-10, 0, 1, -0.00347725, -0.0227942, -8.36607)
+transform = Transform3D(1, 0, -2.32831e-10, 0, 1, 0, 2.32831e-10, 0, 1, -0.00347725, -0.0636467, -8.36607)
 
 [node name="Terrain2" parent="Terrain" instance=ExtResource("6_j2860")]
 transform = Transform3D(1, 0, 1.74548e-05, 0, 1, 0, -1.74548e-05, 0, 1, 0, -0.0206034, 1.92927)
@@ -199,29 +199,33 @@ layout_mode = 2
 text = "PlayerScore:"
 label_settings = SubResource("LabelSettings_dq0i0")
 
-[node name="Roadblock" parent="." instance=ExtResource("6_ec7g1")]
+[node name="fences" type="Node3D" parent="."]
+process_mode = 4
+visible = false
+
+[node name="Roadblock" parent="fences" instance=ExtResource("6_ec7g1")]
 transform = Transform3D(0.00136133, 0, -0.999999, 0, 1, 0, 0.999999, 0, 0.00136133, 8.39179, 0.664939, -8.61227)
 
-[node name="Roadblock5" parent="." instance=ExtResource("6_ec7g1")]
+[node name="Roadblock5" parent="fences" instance=ExtResource("6_ec7g1")]
 transform = Transform3D(0.00136133, 0, -0.999999, 0, 1, 0, 0.999999, 0, 0.00136133, 4.38347, 0.664939, -8.65199)
 
-[node name="Roadblock4" parent="." instance=ExtResource("6_ec7g1")]
+[node name="Roadblock4" parent="fences" instance=ExtResource("6_ec7g1")]
 transform = Transform3D(0.00136133, 0, -0.999999, 0, 1, 0, 0.999999, 0, 0.00136133, -5.64273, 0.664939, -8.72989)
 
-[node name="Roadblock8" parent="." instance=ExtResource("6_ec7g1")]
+[node name="Roadblock8" parent="fences" instance=ExtResource("6_ec7g1")]
 transform = Transform3D(0.00136133, 0, -0.999999, 0, 1, 0, 0.999999, 0, 0.00136133, -9.64106, 0.664939, -8.74717)
 
-[node name="Roadblock9" parent="." instance=ExtResource("6_ec7g1")]
+[node name="Roadblock9" parent="fences" instance=ExtResource("6_ec7g1")]
 transform = Transform3D(0.00136133, 0, -0.999999, 0, 1, 0, 0.999999, 0, 0.00136133, -13.6443, 0.664939, -8.78783)
 
-[node name="Roadblock10" parent="." instance=ExtResource("6_ec7g1")]
+[node name="Roadblock10" parent="fences" instance=ExtResource("6_ec7g1")]
 transform = Transform3D(0.00136133, 0, -0.999999, 0, 1, 0, 0.999999, 0, 0.00136133, -19.3043, 0.664939, -8.82205)
 
-[node name="Roadblock3" parent="." instance=ExtResource("6_ec7g1")]
+[node name="Roadblock3" parent="fences" instance=ExtResource("6_ec7g1")]
 transform = Transform3D(0.00136133, 0, -0.999999, 0, 1, 0, 0.999999, 0, 0.00136133, 12.3905, 0.664939, -8.57365)
 
-[node name="Roadblock7" parent="." instance=ExtResource("6_ec7g1")]
+[node name="Roadblock7" parent="fences" instance=ExtResource("6_ec7g1")]
 transform = Transform3D(0.00136133, 0, -0.999999, 0, 1, 0, 0.999999, 0, 0.00136133, 19.3013, 0.664939, -8.53814)
 
-[node name="Roadblock2" parent="." instance=ExtResource("6_ec7g1")]
+[node name="Roadblock2" parent="fences" instance=ExtResource("6_ec7g1")]
 transform = Transform3D(0.00136133, 0, -0.999999, 0, 1, 0, 0.999999, 0, 0.00136133, 0.379435, 0.664939, -8.68864)

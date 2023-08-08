@@ -15,6 +15,8 @@ var player_lives: int = 3
 var spawning_location: Vector3 = Vector3(0.0, 0.0, -7.7)
 var score: int = 0
 var ride_along: Vehicle = null
+var ride_offset: float = 0 # X axis.
+
 
 func _ready():
 	position = spawning_location
@@ -24,7 +26,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if ride_along:
-		position = ride_along.position
+		global_position = ride_along.global_position
 	var direction = Vector2()
 	
 	# Get input from W, A, S, D keys (move_up, move_down, move_left, move_right)

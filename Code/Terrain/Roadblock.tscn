@@ -1,4 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://q5q6s1n7m6lc"]
+[gd_scene load_steps=9 format=3 uid="uid://q5q6s1n7m6lc"]
+
+[ext_resource type="Script" path="res://Terrain/Roadblock.gd" id="1_olj5i"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_un8hn"]
 albedo_color = Color(0.27451, 0.156863, 0.027451, 1)
@@ -26,6 +28,7 @@ size = Vector3(4, 0.165, 0.4)
 
 [node name="Roadblock" type="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.340137, 1.46644, -0.753848)
+script = ExtResource("1_olj5i")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.00881366, 4.32259e-05, -0.999961, 0.00490436, 0.999988, 0, 0.999949, -0.00490416, -0.00881377, 0, -0.126747, 0)
