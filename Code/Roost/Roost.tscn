@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b3kt5miwigm0h"]
+[gd_scene load_steps=14 format=3 uid="uid://b3kt5miwigm0h"]
 
 [ext_resource type="Script" path="res://Roost/Roost.gd" id="1_sfjk3"]
 
@@ -19,6 +19,10 @@ albedo_color = Color(0.992157, 0.423529, 0, 1)
 albedo_color = Color(0.360784, 0.670588, 0.776471, 0.137255)
 
 [sub_resource type="BoxMesh" id="BoxMesh_1sy3i"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_m8y3h"]
+radius = 0.505
+height = 1.475
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kscf6"]
 albedo_color = Color(0.439216, 0.345098, 0.0980392, 1)
@@ -92,6 +96,21 @@ transform = Transform3D(0.0776204, 0, 0, 0, 0.0968616, 0, 0, 0, 0.0958994, 0.076
 material_override = SubResource("StandardMaterial3D_fpq1h")
 mesh = SubResource("BoxMesh_1sy3i")
 skeleton = NodePath("../..")
+
+[node name="Eggs2" type="Node3D" parent="Dummy"]
+transform = Transform3D(0.749481, 0, 0, 0, 0.663516, 0, 0, 0, 0.55463, 0.0179531, -0.482941, 0.733768)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Dummy/Eggs2"]
+transform = Transform3D(0.755786, 0, 0, 0, 0.680631, 0, 0, 0, 0.789063, 0, 0.700748, 0)
+mesh = SubResource("SphereMesh_m8y3h")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Dummy/Eggs2"]
+transform = Transform3D(0.722379, 0.200121, 0, -0.222219, 0.650546, 0, 0, 0, 0.789063, 0.416865, 0.657427, 0)
+mesh = SubResource("SphereMesh_m8y3h")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Dummy/Eggs2"]
+transform = Transform3D(0.65663, -0.337018, 0, 0.374232, 0.591335, 0, 0, 0, 0.789063, -0.360245, 0.657427, 0)
+mesh = SubResource("SphereMesh_m8y3h")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.835672, 0, 0, 0, 1, 0, 0.440575, 0)

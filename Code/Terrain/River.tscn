@@ -16,10 +16,10 @@ size = Vector3(30, 0.5, 4)
 script = ExtResource("1_n6fye")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.159933, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.206025, 0)
 shape = SubResource("BoxShape3D_le31i")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.16914, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.169447, 0)
 material_override = SubResource("StandardMaterial3D_gpgwh")
 mesh = SubResource("BoxMesh_ejo1e")
