@@ -1,0 +1,8 @@
+res://Main/default_env.tres::afbed0c9e6032587f1165ae47e7b3166::1690423154::res://.godot/exported/133200997/export-246d32d6127a8a207daf0bd6d324e7fa-default_env.res
+res://Main/Main.tscn::28d1834410d4d2fdff14f156331b5d8c::1693279477::res://.godot/exported/133200997/export-ebc741d9ca7bc58bf3f4d09c000e7715-Main.scn
+res://Player/Player.tscn::1d5d9edced2b04e365d757e91ff0ae9c::1691460428::res://.godot/exported/133200997/export-48b487cb3fbab0e0d627d8f8de2ba1d9-Player.scn
+res://Roost/Roost.tscn::f52c46f58470527568e3bde4cdd58a96::1693279477::res://.godot/exported/133200997/export-b50a669f1cd4adc9f289db7f85579cde-Roost.scn
+res://Terrain/River.tscn::5589f64c8727a3dda365bb55870f2842::1693279477::res://.godot/exported/133200997/export-57771199059bd8c4b2342aa72b251499-River.scn
+res://Terrain/Road.tscn::065eca73e062280dbcfebc2a79688b21::1693279477::res://.godot/exported/133200997/export-0c7fb589239276eaa5e324faab0aa318-Road.scn
+res://Terrain/Roadblock.tscn::bc31dea9424deba0e925fe607ede4d63::1693279477::res://.godot/exported/133200997/export-ba6cb26dcaf574ebd0b4506993965cec-Roadblock.scn
+res://Vehicle/Vehicle.tscn::7c32d63a2f53fbd9b2e5c7ee09cec9b8::1693279477::res://.godot/exported/133200997/export-4421d58c84688a252842ba2d309993a3-Vehicle.scn
