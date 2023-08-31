@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cg04rlbhnkept"]
+[gd_scene load_steps=25 format=3 uid="uid://cg04rlbhnkept"]
 
 [ext_resource type="Script" path="res://Main/Main.gd" id="1"]
 [ext_resource type="PackedScene" uid="uid://6e2f0n6njwu5" path="res://Terrain/River.tscn" id="4_3n5fr"]
@@ -70,6 +70,17 @@ albedo_color = Color(0.878431, 0.407843, 0.992157, 1)
 radius = 0.44
 height = 0.82
 radial_segments = 24
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mhtpx"]
+albedo_color = Color(0.631373, 0.337255, 0.160784, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_hncnn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8soh0"]
+albedo_color = Color(0.917647, 0.588235, 0.4, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_rqcun"]
+size = Vector3(0.04, 1.4, 1.005)
 
 [node name="Main" type="Node"]
 script = ExtResource("1")
@@ -562,3 +573,218 @@ mesh = SubResource("SphereMesh_5qwq4")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.30756, 0.731945, 0.0233874)
 material_override = SubResource("StandardMaterial3D_5puth")
 mesh = SubResource("SphereMesh_5qwq4")
+
+[node name="boxes" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="boxes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.37036, 0.53331, 9.74043)
+material_override = SubResource("StandardMaterial3D_mhtpx")
+mesh = SubResource("BoxMesh_hncnn")
+
+[node name="crosshatch" type="MeshInstance3D" parent="boxes/MeshInstance3D"]
+transform = Transform3D(0.697787, 0.716361, 0, -0.670394, 0.745632, 0, 0, 0, 1, 0.00188923, -0.020593, 0.00122356)
+material_override = SubResource("StandardMaterial3D_8soh0")
+mesh = SubResource("BoxMesh_rqcun")
+skeleton = NodePath("../..")
+
+[node name="crosshatch2" type="MeshInstance3D" parent="boxes/MeshInstance3D"]
+transform = Transform3D(0.690007, -0.724915, 0, 0.678399, 0.737318, 0, 0, 0, 1, 0.00188923, -0.020593, 0.00122356)
+material_override = SubResource("StandardMaterial3D_8soh0")
+mesh = SubResource("BoxMesh_rqcun")
+skeleton = NodePath("../..")
+
+[node name="crosshatch3" type="MeshInstance3D" parent="boxes/MeshInstance3D"]
+transform = Transform3D(0.967634, -0.0048365, 0, 0.00452602, 1.03398, 0, 0, 0, 1, -0.497186, -0.214308, 0.00122356)
+material_override = SubResource("StandardMaterial3D_8soh0")
+mesh = SubResource("BoxMesh_rqcun")
+skeleton = NodePath("../..")
+
+[node name="crosshatch4" type="MeshInstance3D" parent="boxes/MeshInstance3D"]
+transform = Transform3D(0.967634, -0.0048365, 0, 0.00452602, 1.03398, 0, 0, 0, 1, 0.498975, -0.214308, 0.00122356)
+material_override = SubResource("StandardMaterial3D_8soh0")
+mesh = SubResource("BoxMesh_rqcun")
+skeleton = NodePath("../..")
+
+[node name="crosshatch5" type="MeshInstance3D" parent="boxes/MeshInstance3D"]
+transform = Transform3D(0.0112869, -0.737395, 0, 0.970958, 0.00857173, 0, 0, 0, 1, -0.00429153, 0.509694, 0.0012598)
+material_override = SubResource("StandardMaterial3D_8soh0")
+mesh = SubResource("BoxMesh_rqcun")
+skeleton = NodePath("../..")
+
+[node name="crosshatch6" type="MeshInstance3D" parent="boxes/MeshInstance3D"]
+transform = Transform3D(0.0112869, -0.737395, 0, 0.970958, 0.00857173, 0, 0, 0, 1, -0.00429153, -0.509147, 0.0012598)
+material_override = SubResource("StandardMaterial3D_8soh0")
+mesh = SubResource("BoxMesh_rqcun")
+skeleton = NodePath("../..")
+
+[node name="boxes2" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="boxes2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.06461, 0.53331, 9.74043)
+material_override = SubResource("StandardMaterial3D_mhtpx")
+mesh = SubResource("BoxMesh_hncnn")
+
+[node name="crosshatch" type="MeshInstance3D" parent="boxes2/MeshInstance3D"]
+transform = Transform3D(0.697787, 0.716361, 0, -0.670394, 0.745632, 0, 0, 0, 1, 0.00188923, -0.020593, 0.00122356)
+material_override = SubResource("StandardMaterial3D_8soh0")
+mesh = SubResource("BoxMesh_rqcun")
+skeleton = NodePath("../..")
+
+[node name="crosshatch2" type="MeshInstance3D" parent="boxes2/MeshInstance3D"]
+transform = Transform3D(0.690007, -0.724915, 0, 0.678399, 0.737318, 0, 0, 0, 1, 0.00188923, -0.020593, 0.00122356)
+material_override = SubResource("StandardMaterial3D_8soh0")
+mesh = SubResource("BoxMesh_rqcun")
+skeleton = NodePath("../..")
+
+[node name="crosshatch3" type="MeshInstance3D" parent="boxes2/MeshInstance3D"]
+transform = Transform3D(0.967634, -0.0048365, 0, 0.00452602, 1.03398, 0, 0, 0, 1, -0.497186, -0.214308, 0.00122356)
+material_override = SubResource("StandardMaterial3D_8soh0")
+mesh = SubResource("BoxMesh_rqcun")
+skeleton = NodePath("../..")
+
+[node name="crosshatch4" type="MeshInstance3D" parent="boxes2/MeshInstance3D"]
+transform = Transform3D(0.967634, -0.0048365, 0, 0.00452602, 1.03398, 0, 0, 0, 1, 0.498975, -0.214308, 0.00122356)
+material_override = SubResource("StandardMaterial3D_8soh0")
+mesh = SubResource("BoxMesh_rqcun")
+skeleton = NodePath("../..")
+
+[node name="crosshatch5" type="MeshInstance3D" parent="boxes2/MeshInstance3D"]
+transform = Transform3D(0.0112869, -0.737395, 0, 0.970958, 0.00857173, 0, 0, 0, 1, -0.00429153, 0.509694, 0.0012598)
+material_override = SubResource("StandardMaterial3D_8soh0")
+mesh = SubResource("BoxMesh_rqcun")
+skeleton = NodePath("../..")
+
+[node name="crosshatch6" type="MeshInstance3D" parent="boxes2/MeshInstance3D"]
+transform = Transform3D(0.0112869, -0.737395, 0, 0.970958, 0.00857173, 0, 0, 0, 1, -0.00429153, -0.509147, 0.0012598)
+material_override = SubResource("StandardMaterial3D_8soh0")
+mesh = SubResource("BoxMesh_rqcun")
+skeleton = NodePath("../..")
+
+[node name="boxes3" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="boxes3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.9991, 0.53331, 9.74043)
+material_override = SubResource("StandardMaterial3D_mhtpx")
+mesh = SubResource("BoxMesh_hncnn")
+
+[node name="crosshatch" type="MeshInstance3D" parent="boxes3/MeshInstance3D"]
+transform = Transform3D(0.697787, 0.716361, 0, -0.670394, 0.745632, 0, 0, 0, 1, 0.00188923, -0.020593, 0.00122356)
+material_override = SubResource("StandardMaterial3D_8soh0")
+mesh = SubResource("BoxMesh_rqcun")
+skeleton = NodePath("../..")
+
+[node name="crosshatch2" type="MeshInstance3D" parent="boxes3/MeshInstance3D"]
+transform = Transform3D(0.690007, -0.724915, 0, 0.678399, 0.737318, 0, 0, 0, 1, 0.00188923, -0.020593, 0.00122356)
+material_override = SubResource("StandardMaterial3D_8soh0")
+mesh = SubResource("BoxMesh_rqcun")
+skeleton = NodePath("../..")
+
+[node name="crosshatch3" type="MeshInstance3D" parent="boxes3/MeshInstance3D"]
+transform = Transform3D(0.967634, -0.0048365, 0, 0.00452602, 1.03398, 0, 0, 0, 1, -0.497186, -0.214308, 0.00122356)
+material_override = SubResource("StandardMaterial3D_8soh0")
+mesh = SubResource("BoxMesh_rqcun")
+skeleton = NodePath("../..")
+
+[node name="crosshatch4" type="MeshInstance3D" parent="boxes3/MeshInstance3D"]
+transform = Transform3D(0.967634, -0.0048365, 0, 0.00452602, 1.03398, 0, 0, 0, 1, 0.498975, -0.214308, 0.00122356)
+material_override = SubResource("StandardMaterial3D_8soh0")
+mesh = SubResource("BoxMesh_rqcun")
+skeleton = NodePath("../..")
+
+[node name="crosshatch5" type="MeshInstance3D" parent="boxes3/MeshInstance3D"]
+transform = Transform3D(0.0112869, -0.737395, 0, 0.970958, 0.00857173, 0, 0, 0, 1, -0.00429153, 0.509694, 0.0012598)
+material_override = SubResource("StandardMaterial3D_8soh0")
+mesh = SubResource("BoxMesh_rqcun")
+skeleton = NodePath("../..")
+
+[node name="crosshatch6" type="MeshInstance3D" parent="boxes3/MeshInstance3D"]
+transform = Transform3D(0.0112869, -0.737395, 0, 0.970958, 0.00857173, 0, 0, 0, 1, -0.00429153, -0.509147, 0.0012598)
+material_override = SubResource("StandardMaterial3D_8soh0")
+mesh = SubResource("BoxMesh_rqcun")
+skeleton = NodePath("../..")
+
+[node name="boxes4" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="boxes4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.22657, 0.53331, 9.74043)
+material_override = SubResource("StandardMaterial3D_mhtpx")
+mesh = SubResource("BoxMesh_hncnn")
+
+[node name="crosshatch" type="MeshInstance3D" parent="boxes4/MeshInstance3D"]
+transform = Transform3D(0.697787, 0.716361, 0, -0.670394, 0.745632, 0, 0, 0, 1, 0.00188923, -0.020593, 0.00122356)
+material_override = SubResource("StandardMaterial3D_8soh0")
+mesh = SubResource("BoxMesh_rqcun")
+skeleton = NodePath("../..")
+
+[node name="crosshatch2" type="MeshInstance3D" parent="boxes4/MeshInstance3D"]
+transform = Transform3D(0.690007, -0.724915, 0, 0.678399, 0.737318, 0, 0, 0, 1, 0.00188923, -0.020593, 0.00122356)
+material_override = SubResource("StandardMaterial3D_8soh0")
+mesh = SubResource("BoxMesh_rqcun")
+skeleton = NodePath("../..")
+
+[node name="crosshatch3" type="MeshInstance3D" parent="boxes4/MeshInstance3D"]
+transform = Transform3D(0.967634, -0.0048365, 0, 0.00452602, 1.03398, 0, 0, 0, 1, -0.497186, -0.214308, 0.00122356)
+material_override = SubResource("StandardMaterial3D_8soh0")
+mesh = SubResource("BoxMesh_rqcun")
+skeleton = NodePath("../..")
+
+[node name="crosshatch4" type="MeshInstance3D" parent="boxes4/MeshInstance3D"]
+transform = Transform3D(0.967634, -0.0048365, 0, 0.00452602, 1.03398, 0, 0, 0, 1, 0.498975, -0.214308, 0.00122356)
+material_override = SubResource("StandardMaterial3D_8soh0")
+mesh = SubResource("BoxMesh_rqcun")
+skeleton = NodePath("../..")
+
+[node name="crosshatch5" type="MeshInstance3D" parent="boxes4/MeshInstance3D"]
+transform = Transform3D(0.0112869, -0.737395, 0, 0.970958, 0.00857173, 0, 0, 0, 1, -0.00429153, 0.509694, 0.0012598)
+material_override = SubResource("StandardMaterial3D_8soh0")
+mesh = SubResource("BoxMesh_rqcun")
+skeleton = NodePath("../..")
+
+[node name="crosshatch6" type="MeshInstance3D" parent="boxes4/MeshInstance3D"]
+transform = Transform3D(0.0112869, -0.737395, 0, 0.970958, 0.00857173, 0, 0, 0, 1, -0.00429153, -0.509147, 0.0012598)
+material_override = SubResource("StandardMaterial3D_8soh0")
+mesh = SubResource("BoxMesh_rqcun")
+skeleton = NodePath("../..")
+
+[node name="boxes5" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="boxes5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.1363, 0.53331, 9.74043)
+material_override = SubResource("StandardMaterial3D_mhtpx")
+mesh = SubResource("BoxMesh_hncnn")
+
+[node name="crosshatch" type="MeshInstance3D" parent="boxes5/MeshInstance3D"]
+transform = Transform3D(0.697787, 0.716361, 0, -0.670394, 0.745632, 0, 0, 0, 1, 0.00188923, -0.020593, 0.00122356)
+material_override = SubResource("StandardMaterial3D_8soh0")
+mesh = SubResource("BoxMesh_rqcun")
+skeleton = NodePath("../..")
+
+[node name="crosshatch2" type="MeshInstance3D" parent="boxes5/MeshInstance3D"]
+transform = Transform3D(0.690007, -0.724915, 0, 0.678399, 0.737318, 0, 0, 0, 1, 0.00188923, -0.020593, 0.00122356)
+material_override = SubResource("StandardMaterial3D_8soh0")
+mesh = SubResource("BoxMesh_rqcun")
+skeleton = NodePath("../..")
+
+[node name="crosshatch3" type="MeshInstance3D" parent="boxes5/MeshInstance3D"]
+transform = Transform3D(0.967634, -0.0048365, 0, 0.00452602, 1.03398, 0, 0, 0, 1, -0.497186, -0.214308, 0.00122356)
+material_override = SubResource("StandardMaterial3D_8soh0")
+mesh = SubResource("BoxMesh_rqcun")
+skeleton = NodePath("../..")
+
+[node name="crosshatch4" type="MeshInstance3D" parent="boxes5/MeshInstance3D"]
+transform = Transform3D(0.967634, -0.0048365, 0, 0.00452602, 1.03398, 0, 0, 0, 1, 0.498975, -0.214308, 0.00122356)
+material_override = SubResource("StandardMaterial3D_8soh0")
+mesh = SubResource("BoxMesh_rqcun")
+skeleton = NodePath("../..")
+
+[node name="crosshatch5" type="MeshInstance3D" parent="boxes5/MeshInstance3D"]
+transform = Transform3D(0.0112869, -0.737395, 0, 0.970958, 0.00857173, 0, 0, 0, 1, -0.00429153, 0.509694, 0.0012598)
+material_override = SubResource("StandardMaterial3D_8soh0")
+mesh = SubResource("BoxMesh_rqcun")
+skeleton = NodePath("../..")
+
+[node name="crosshatch6" type="MeshInstance3D" parent="boxes5/MeshInstance3D"]
+transform = Transform3D(0.0112869, -0.737395, 0, 0.970958, 0.00857173, 0, 0, 0, 1, -0.00429153, -0.509147, 0.0012598)
+material_override = SubResource("StandardMaterial3D_8soh0")
+mesh = SubResource("BoxMesh_rqcun")
+skeleton = NodePath("../..")

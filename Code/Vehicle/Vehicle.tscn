@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://buwoxjby6e1tt"]
+[gd_scene load_steps=18 format=3 uid="uid://buwoxjby6e1tt"]
 
 [ext_resource type="Script" path="res://Vehicle/Vehicle.gd" id="1_cdavw"]
 
@@ -31,6 +31,15 @@ size = Vector3(0.998, 0.116, 1.06)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ebh47"]
 albedo_color = Color(0, 0.498039, 1, 1)
+metallic = 0.69
+roughness = 0.31
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tfswj"]
+albedo_color = Color(0.443137, 0.466667, 0.843137, 0.960784)
+metallic = 0.42
+roughness = 0.15
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_i2yyo"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_axxik"]
 albedo_color = Color(0.266667, 0.215686, 0.0352941, 1)
@@ -38,6 +47,11 @@ albedo_color = Color(0.266667, 0.215686, 0.0352941, 1)
 [sub_resource type="CylinderMesh" id="CylinderMesh_7o5n2"]
 top_radius = 0.63
 bottom_radius = 0.61
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6yjw1"]
+albedo_color = Color(0.423529, 0.333333, 0.00392157, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_fp0mn"]
 
 [node name="Vehicle" type="Area3D"]
 script = ExtResource("1_cdavw")
@@ -96,6 +110,18 @@ material_override = SubResource("StandardMaterial3D_ebh47")
 mesh = SubResource("BoxMesh_4veos")
 skeleton = NodePath("../..")
 
+[node name="Hubcap" type="MeshInstance3D" parent="Road"]
+transform = Transform3D(-0.00764155, 1.11235, 0, -0.619243, -0.0137265, 0, 0, 0, 0.599636, -0.0113329, -0.307731, -0.743267)
+material_override = SubResource("StandardMaterial3D_tfswj")
+mesh = SubResource("CapsuleMesh_i2yyo")
+skeleton = NodePath("../..")
+
+[node name="Hubcap2" type="MeshInstance3D" parent="Road"]
+transform = Transform3D(-0.0081617, 1.11328, 0, -0.661394, -0.0137381, 0, 0, 0, 0.617126, -0.00511968, -0.314088, 0.719644)
+material_override = SubResource("StandardMaterial3D_tfswj")
+mesh = SubResource("CapsuleMesh_i2yyo")
+skeleton = NodePath("../..")
+
 [node name="River" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.664324, 0)
 
@@ -103,3 +129,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.664324, 0)
 transform = Transform3D(1, 0, 0, 0, 0.00293214, -0.999996, 0, 0.999996, 0.00293214, 0, -0.00827694, 0)
 material_override = SubResource("StandardMaterial3D_axxik")
 mesh = SubResource("CylinderMesh_7o5n2")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="River/MeshInstance3D"]
+transform = Transform3D(0.912669, 0, 0, 0, 1.00908, 2.56114e-09, 0, -3.49246e-09, 0.907065, 0, 0.00126386, 3.69549e-06)
+material_override = SubResource("StandardMaterial3D_6yjw1")
+mesh = SubResource("CylinderMesh_fp0mn")
