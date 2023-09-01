@@ -1,7 +1,0 @@
-res://Main/Main.tscn
-res://Vehicle/Vehicle.tscn
-res://Roost/Roost.tscn
-res://Terrain/Road.tscn
-res://Terrain/River.tscn
-res://Terrain/Roadblock.tscn
-res://Player/Player.gd
