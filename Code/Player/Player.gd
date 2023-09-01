@@ -24,32 +24,35 @@ func _ready():
 	area_exited.connect(OnAreaExited)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _physics_process(delta):
 	if ride_along:
 		global_position = ride_along.global_position
 	var direction = Vector2()
 	
 	# Get input from W, A, S, D keys (move_up, move_down, move_left, move_right)
 	if Input.is_action_just_pressed("move_up"):
-#		TweenPosition(Vector3(0,0, -move_increment))
+		if ride_along:
+			ride_along = null
 		direction.y -= 1
 		update_speed()
-		UpdateScore(1)
+		
 	if Input.is_action_just_pressed("move_down"):
-#		TweenPosition(Vector3(0, 0, move_increment))
+		if ride_along:
+			ride_along = null
 		direction.y += 1
 		update_speed()
-		UpdateScore(1)
+
+			
 	if Input.is_action_just_pressed("move_left"):
-#		TweenPosition(Vector3(-move_increment,0, 0))
-		direction.x -= 1
-		update_speed()
-		UpdateScore(1)
+		if not ride_along:
+			direction.x -= 1
+			update_speed()
+		
 	if Input.is_action_just_pressed("move_right"):
-#		TweenPosition(Vector3(move_increment, 0, 0))
-		direction.x += 1
-		update_speed()
-		UpdateScore(1)
+		if not ride_along:
+			direction.x += 1
+			update_speed()
+			
 	
 	direction = direction.normalized() # Normalize the vector to get consistent speed in all directions
 	
