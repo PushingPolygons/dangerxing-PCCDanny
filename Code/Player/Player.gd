@@ -108,3 +108,5 @@ func kill():
 	if player_lives <= 0:
 		main.menu.show()
 		queue_free()
+
+#k func update_player_lives
