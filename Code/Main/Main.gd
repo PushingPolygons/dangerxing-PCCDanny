@@ -46,4 +46,3 @@ func OnPlayPressed():
 
 func OnQuitPressed():
 	get_tree().quit()
-	
