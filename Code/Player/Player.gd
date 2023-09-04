@@ -98,9 +98,10 @@ func OnAreaEntered(other_area: Area3D):
 		position = spawning_location # Jump back to spawn.
 		other_area.Occupy()
 		if main.IsGameOver():
-			main.menu.show()
-		elif other_area is River:
-			kill()
+			get_tree().reload_current_scene()
+#			main.menu.show()
+	elif other_area is River:
+		kill()
 
 func OnAreaExited(other_area: Area3D):
 	pass
@@ -114,5 +115,6 @@ func kill():
 	if player_lives <= 0:
 		main.menu.show()
 		queue_free()
+
 
 #k func update_player_lives

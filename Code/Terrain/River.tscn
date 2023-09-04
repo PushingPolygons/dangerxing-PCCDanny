@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://6e2f0n6njwu5"]
+[gd_scene load_steps=6 format=3 uid="uid://6e2f0n6njwu5"]
 
 [ext_resource type="Script" path="res://Terrain/River.gd" id="1_n6fye"]
+[ext_resource type="Script" path="res://Main/Main.gd" id="2_bcn6b"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_le31i"]
 size = Vector3(30, 0.5, 4)
@@ -23,3 +24,4 @@ shape = SubResource("BoxShape3D_le31i")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.169447, 0)
 material_override = SubResource("StandardMaterial3D_gpgwh")
 mesh = SubResource("BoxMesh_ejo1e")
+script = ExtResource("2_bcn6b")
