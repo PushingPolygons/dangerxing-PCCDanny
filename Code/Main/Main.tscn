@@ -133,7 +133,6 @@ mesh = SubResource("PlaneMesh_lig6h")
 
 [node name="River" parent="Terrain" instance=ExtResource("4_3n5fr")]
 transform = Transform3D(1, 0, -2.32831e-10, 0, 1, 0, 2.32831e-10, 0, 1, -0.00347725, -0.0267932, -8.36607)
-visible = false
 
 [node name="Terrain2" parent="Terrain" instance=ExtResource("6_j2860")]
 transform = Transform3D(1, 0, 1.74548e-05, 0, 1, 0, -1.74548e-05, 0, 1, 0, -0.0206034, 1.92927)
