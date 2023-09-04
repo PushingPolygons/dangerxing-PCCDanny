@@ -210,17 +210,17 @@ is_safe = false
 
 [node name="Vehicle6" parent="Cars" instance=ExtResource("4_bruup")]
 transform = Transform3D(0.0127057, 0, 0.999919, 0, 1, 0, -0.999919, 0, 0.0127057, 16.0909, 0.543458, 2.67134)
-speed = 13.0
+speed = 11.0
 is_safe = false
 
 [node name="Vehicle5" parent="Cars" instance=ExtResource("4_bruup")]
 transform = Transform3D(0.0127057, 0, 0.999919, 0, 1, 0, -0.999919, 0, 0.0127057, -16.0524, 0.543458, 2.56216)
-speed = 13.0
+speed = 11.0
 is_safe = false
 
 [node name="Vehicle4" parent="Cars" instance=ExtResource("4_bruup")]
 transform = Transform3D(0.0127057, 0, 0.999919, 0, 1, 0, -0.999919, 0, 0.0127057, 0.614849, 0.543458, 2.59147)
-speed = 13.0
+speed = 11.0
 is_safe = false
 
 [node name="Vehicle3" parent="Cars" instance=ExtResource("4_bruup")]

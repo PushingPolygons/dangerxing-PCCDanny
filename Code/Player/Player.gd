@@ -8,7 +8,7 @@ class_name Player
 
 
 var main: Main
-var speed: float = 180.0 # m/s.
+var speed: float = 130.0 # m/s.
 var move_increment: float = 1.5
 var current_speed: float = speed
 var player_lives: int = 3
