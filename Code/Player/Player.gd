@@ -8,7 +8,7 @@ class_name Player
 
 
 var main: Main
-var speed: float = 180.0 # m/s.
+var speed: float = 100.0 # m/s.
 var move_increment: float = 1.5
 var current_speed: float = speed
 var player_lives: int = 3
@@ -35,24 +35,27 @@ func _physics_process(delta):
 			ride_along = null
 		direction.y -= 1
 		update_speed()
+		UpdateScore(1)
 		
 	if Input.is_action_just_pressed("move_down"):
 		if ride_along:
 			ride_along = null
 		direction.y += 1
 		update_speed()
+		UpdateScore(1)
 
 			
 	if Input.is_action_just_pressed("move_left"):
 		if not ride_along:
 			direction.x -= 1
 			update_speed()
+			UpdateScore(1)
 		
 	if Input.is_action_just_pressed("move_right"):
 		if not ride_along:
 			direction.x += 1
 			update_speed()
-			
+			UpdateScore(1)
 	
 	direction = direction.normalized() # Normalize the vector to get consistent speed in all directions
 	

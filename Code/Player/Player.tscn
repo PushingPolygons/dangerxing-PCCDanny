@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dph23bwxy023t"]
+[gd_scene load_steps=22 format=3 uid="uid://dph23bwxy023t"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_73smy"]
 
@@ -12,13 +12,42 @@ albedo_color = Color(0.992157, 0.423529, 0, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mkgxs"]
 albedo_color = Color(0.992157, 0.423529, 0, 1)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q6vnk"]
+albedo_color = Color(0.552941, 0, 0.0196078, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_unns7"]
+size = Vector3(0.105, 0.04, 0.215)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_g4bjb"]
-size = Vector3(1, 1.04591, 1.29999)
+size = Vector3(1, 1.36558, 1.29999)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_thskh"]
 albedo_color = Color(0.360784, 0.670588, 0.776471, 0.137255)
 
 [sub_resource type="BoxMesh" id="BoxMesh_badqx"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_10s18"]
+albedo_color = Color(0, 0, 0.0666667, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_4b0bj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qx2pu"]
+albedo_color = Color(1, 0.396078, 0.219608, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_j1bue"]
+size = Vector3(0.15, 0.35, 0.185)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bhf03"]
+albedo_color = Color(1, 0.396078, 0.219608, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_xw8cf"]
+size = Vector3(0.055, 0.05, 0.275)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0bwe5"]
+albedo_color = Color(1, 0.396078, 0.219608, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sff3k"]
+albedo_color = Color(1, 0.396078, 0.219608, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nkdkr"]
 content_margin_left = 12.0
@@ -86,8 +115,13 @@ transform = Transform3D(0.262666, 0, 0, 0, 0.0734105, -0.051321, 0, 0.0151799, 0
 material_override = SubResource("StandardMaterial3D_mkgxs")
 mesh = SubResource("BoxMesh_13evj")
 
+[node name="tongue" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, -9.59853e-06, 8.89755e-07, 9.59853e-06, 0.982961, -0.183814, 8.89751e-07, 0.183814, 0.982961, -4.52921e-05, 0.45131, 0.867354)
+material_override = SubResource("StandardMaterial3D_q6vnk")
+mesh = SubResource("BoxMesh_unns7")
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.266645, 0.348451)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.132358, 0.348451)
 shape = SubResource("BoxShape3D_g4bjb")
 
 [node name="eye1" type="MeshInstance3D" parent="."]
@@ -95,10 +129,66 @@ transform = Transform3D(0.0776204, 0, 0, 0, 0.0968616, 0, 0, 0, 0.0958994, -0.07
 material_override = SubResource("StandardMaterial3D_thskh")
 mesh = SubResource("BoxMesh_badqx")
 
+[node name="eyehole" type="MeshInstance3D" parent="eye1"]
+transform = Transform3D(0.738164, -5.26242e-05, 4.91356e-05, 4.76096e-05, 0.0195074, -0.780037, 4.64846e-05, 0.815679, 0.018655, 0, 0, 0)
+visible = false
+material_override = SubResource("StandardMaterial3D_10s18")
+mesh = SubResource("CapsuleMesh_4b0bj")
+
 [node name="eye2" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.0776204, 0, 0, 0, 0.0968616, 0, 0, 0, 0.0958994, 0.0761939, 0.642769, 0.787474)
 material_override = SubResource("StandardMaterial3D_thskh")
 mesh = SubResource("BoxMesh_badqx")
+
+[node name="eyehole2" type="MeshInstance3D" parent="eye2"]
+transform = Transform3D(0.738164, -5.26242e-05, 4.91356e-05, 4.76096e-05, 0.0195074, -0.780037, 4.64846e-05, 0.815679, 0.018655, 0, 0, 0)
+visible = false
+material_override = SubResource("StandardMaterial3D_10s18")
+mesh = SubResource("CapsuleMesh_4b0bj")
+
+[node name="Foot" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18519, -0.405192, 0.0990694)
+material_override = SubResource("StandardMaterial3D_qx2pu")
+mesh = SubResource("BoxMesh_j1bue")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Foot"]
+transform = Transform3D(0.923662, 0, -0.25448, 0, 1, 0, 0.383254, 0, 0.61331, -0.0311276, -0.137728, 0.106332)
+material_override = SubResource("StandardMaterial3D_bhf03")
+mesh = SubResource("BoxMesh_xw8cf")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Foot/MeshInstance3D"]
+transform = Transform3D(0.88804, 0, 0.305284, 0, 1, 0, -0.692421, 0, 0.88804, 0.0410237, 0, 0.0144194)
+material_override = SubResource("StandardMaterial3D_0bwe5")
+mesh = SubResource("BoxMesh_xw8cf")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Foot/MeshInstance3D"]
+transform = Transform3D(0.547432, 0, 0.555667, 0, 1, 0, -1.26032, 0, 0.547432, 0.0592005, -0.000320494, -0.0329166)
+material_override = SubResource("StandardMaterial3D_bhf03")
+mesh = SubResource("BoxMesh_xw8cf")
+skeleton = NodePath("../..")
+
+[node name="Foot2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0777849, -0.405192, 0.114006)
+material_override = SubResource("StandardMaterial3D_sff3k")
+mesh = SubResource("BoxMesh_j1bue")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Foot2"]
+transform = Transform3D(0.923662, 0, -0.25448, 0, 1, 0, 0.383254, 0, 0.61331, -0.0299334, -0.137728, 0.106332)
+material_override = SubResource("StandardMaterial3D_bhf03")
+mesh = SubResource("BoxMesh_xw8cf")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Foot2/MeshInstance3D"]
+transform = Transform3D(0.88804, 0, 0.305284, 0, 1, 0, -0.692421, 0, 0.88804, 0.0410237, 0, 0.0144194)
+material_override = SubResource("StandardMaterial3D_0bwe5")
+mesh = SubResource("BoxMesh_xw8cf")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Foot2/MeshInstance3D"]
+transform = Transform3D(0.547432, 0, 0.555667, 0, 1, 0, -1.26032, 0, 0.547432, 0.0592005, -0.000320494, -0.0329166)
+material_override = SubResource("StandardMaterial3D_bhf03")
+mesh = SubResource("BoxMesh_xw8cf")
+skeleton = NodePath("../..")
 
 [node name="Decal" type="Decal" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.222087, 0.146748)
