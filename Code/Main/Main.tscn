@@ -200,6 +200,7 @@ is_safe = false
 
 [node name="Vehicle8" parent="Cars" instance=ExtResource("4_bruup")]
 transform = Transform3D(0.0127057, 0, 0.999919, 0, 1, 0, -0.999919, 0, 0.0127057, -17.8978, 0.543458, 6.44724)
+visible = false
 speed = 5.0
 is_safe = false
 
@@ -927,7 +928,7 @@ material_override = SubResource("StandardMaterial3D_8aei3")
 mesh = SubResource("BoxMesh_ve1yp")
 
 [node name="BarnRoof" type="MeshInstance3D" parent="Barn/BarnBase"]
-transform = Transform3D(1.05408, 0, 0, 0, 0.322499, 0, 0, 0, 1.00526, 0.00268793, 0.661889, 0.0012126)
+transform = Transform3D(1.05408, 0, 0, 0, 0.322499, 0, 0, 0, 1.00526, 0.00268793, 0.65695, 0.0012126)
 material_override = SubResource("StandardMaterial3D_ig7ef")
 mesh = SubResource("PrismMesh_e7p0n")
 skeleton = NodePath("../..")
